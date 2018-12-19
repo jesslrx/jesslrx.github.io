@@ -1,0 +1,125 @@
+<!DOCTYPE HTML>
+
+<html lang="en">
+<head>
+
+<title>Air Pollution and Water Usage</title>
+    <link rel="stylesheet" type="text/css" href="css/styleproject.css" />
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+	<script type="text/javascript">
+		google.charts.load('current', {'packages':['corechart']});
+		google.charts.setOnLoadCallback(drawAllSheets);
+		
+		function drawAllSheets() {
+			
+			drawSheetName('GHGemissions',
+			              'SELECT B,C,D,E,F,G,H',
+						  GHGEmissionsResponseHandler);
+			
+		} //drawAllSheets()
+		
+		function drawSheetName(sheetName, query, responseHandler) {
+			
+			var queryString = encodeURIComponent(query);
+			var query = new google.visualization.Query(
+				'https://docs.google.com/spreadsheets/d/1W-uKl5wYfIp_Qa9PSZBAuYi_tHy_qnUaU8d7s6Rw_T0/gviz/tq?sheet=' 
+				+ sheetName + '&headers=1&tq=' + queryString);
+			query.send(responseHandler);
+		} //drawSheetName
+		
+
+		
+		function GHGEmissionsResponseHandler(response) {
+		
+			
+			var data = response.getDataTable();
+			data.sort({column: 5, desc:true});
+			
+			var options = {
+				height: 400,
+				vAxis: {title: 'million tonnes'},
+				hAxis: {title: 'Country'}
+			};
+			
+			var chart = new google.visualization.ColumnChart(
+						document.getElementById('GHGemissions_div'));
+			chart.draw(data, options);
+		} //GHGEmissionsResponseHandler	
+			
+	</script>
+</head>
+
+<body>
+
+<div id="main">
+   <div id="header">
+      <div id="title">
+	     <div id="logo_title">
+			
+		 </div><!-- logo_title -->
+	  </div><!-- title -->
+	  <div class="mycontainer">
+       <div class="topnavigation">
+      <a href="link3_GHGvsGovPercapita.html">Vs.Government Spending</a>
+      <a href="link9_GHGvsGDP.html">Vs.GDP</a>
+      <a href="link8_GHGvsPopulation.html">Vs.Population</a>
+      <a href="link2_GHGgrowthrate.html">Growth Rate</a>
+	  <a href="link1_GHGemission.html">Emissions</a>
+      </div><!-- container -->
+       </div><!-- topnav -->
+   </div><!-- header -->
+   <div id="main_content">
+     
+	
+	<div id="sidenavigation" class="sidenav">
+       <a href="projectfinal.html" id="Home">Home</a>
+       <a href="Air.html" id="Air">Air</a>
+       <a href="Water.html" id="Water">Water</a>
+       <a href="https://data.oecd.org/" id="Data">Data</a>
+    </div><!-- sidenavigation -->
+	
+	<div id="introduction">
+		<h2>Air Pollution</h2>
+	    <p><img style="padding: 0 5px; float: right;" src="css/pic4.jpg" /></p>
+	    <p style="margin-top: -40px;"> </p>
+		<p>The Air Pollution part mainly covers the following sections:
+		<ul style="list-style-type:none">
+          <li>Summary of six-year GHG emissions</li>
+          <li>GHG emissions from 2006 to 2011</li>
+          <li>Average annual growth rate of GHG emissions</li>
+		  <li>Comparison of GHG emissions to population</li>
+		  <li>Comparison of GHG Emissions per Capita to GDP per Capita</li>
+		  <li>Comparison of GHG Emissions per Capita to Environmental Protection per Capita</li>
+        </ul>
+		</p>
+		
+		<p>The graph below shows summary of six-year GHG emissions from the top 10 countries. It indicates that 
+		   United State has the highest GHG emissions, while Japan has the second highest emission. These two 
+		   countries do not demonstrate any trend in six years. However, South Korea shows an increasing pattern 
+		   while Germany shows a decreasing pattern. Canada seems to retain a stable level of emissions. 
+		</P>
+		
+	 </div><!-- introduction -->
+	 
+	    <h2>Summary of Greenhouse Gas (GHG) Emissions From 2006 to 2011</h2>
+	    <div id="GHGemissions_div"style="width: 900px; height: 500px;"></div><!-- call GHGemissions_div -->
+	 
+   </div><!-- main_content -->
+   
+
+   
+   <div id="footer">
+       &copy; <script>var d = new Date(); document.write(d.getFullYear());</script>
+	   | Developed by RUIXI LIU
+   </div><!-- footer -->
+   
+ </div><!-- main -->
+    
+
+ 
+</body>
+
+
+
+</html>
+

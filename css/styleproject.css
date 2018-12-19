@@ -1,0 +1,199 @@
+html {
+	height: 100%;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font: normal .78em arial, sans-serif;
+}
+
+p {
+	padding: 0 0 20px 0;
+	line-height: 2em;
+}
+
+img {
+	border: 0;
+	width: 300px;
+	height: 200px;
+	float: left;
+}/* define size of image */
+
+h1, h2, h3 {
+	font: normal 175% 'century gothic', arial, sans-serif;
+	color: white;
+	margin: 0 0 15px 0;
+	padding: 15px 0 5px 0;
+}/* define size of font */
+
+h2 {
+	font: normal 175% 'century gothic', arial, sans-serif;
+	color: #555;
+}/* define size of font */
+
+h3 {
+	font: normal 130% 'century gothic', arial, sans-serif;
+	color: black;
+}/* define size of font */
+
+a, a:hover {
+	outline: none;
+	color: #777;
+	text-decoration: underline;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+ul {
+	margin: 2px 0 22px 17px;
+}
+
+ul li {
+	list-style-type: square;
+	margin: 0 0 6px 0;
+	padding: 0 0 4px 5px;
+}
+
+#main, #header, #title, #main_content, #footer {
+	
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#main {
+	border: 3px solid black;
+	width: 910px;
+}
+
+#header {	
+    
+    background: url(pic1.jpg);
+    background-repeat: repeat-x;
+}/* define background image */
+
+#title {
+	width: 910px;
+	position: relative;
+	height: 150px;
+}
+
+#title #logo_title {
+	position: absolute;
+	top: 100px;
+	left: 20px;
+}
+
+#main_content {
+	width: 910px;
+	overflow: hidden;
+	background: #F8F9F9;
+}
+
+#introduction {
+	text-align: left;
+	width: 800px;
+	float: left;
+	padding: 20px 0 15px 20px;
+}
+
+#introduction ul {
+	margin: 5px 0 30px 0;
+}
+
+#introduction ul li {
+	list-style-type: circle;
+	padding: 0 0 4px 5px;
+	line-height: 1.5em;
+}
+
+#footer {
+	width: 910px;
+	height: 10px;
+	padding: 15px 0 4px 0;
+	text-align: center;
+	background: #777;
+	color: #ccc;
+	border-top: 1px solid #fff;
+	letter-spacing: 0.2em;
+	text-transform: uppercase;
+	font-size: 70%;
+}
+
+/* add the links inside the sidenav */
+#sidenavigation a {
+    position: absolute; /* position them relative to the website window */
+    left: -80px; /* position them on the left side of the window */
+    transition: 0.3s; /* add transition  */
+    padding: 15px; 
+    width: 80px; /* define width */
+    text-decoration: none; /* remove underline effect*/
+    font-size: 20px; /* increase font size */
+    color: white; /* define text color to white*/
+    border-radius: 0 5px 5px 0; /* round top right and bottom right corners */
+}
+
+#sidenavigation a:hover {
+    left: 0; /* when mouse-over, the elements show up */
+}
+
+/* The Home link: 160px from the top */
+#Home {
+    top: 160px;
+    background-color: #CCD1D1;/* gray */
+}
+
+#Air {
+    top: 220px;
+    background-color: #CCD1D1; /* gray */
+}
+
+#Water {
+    top: 280px;
+    background-color: #CCD1D1; /* gray */
+}
+
+#Data {
+    top: 340px;
+    background-color: #CCD1D1 /* gray */
+}
+
+
+/* Position the navbar container inside the image */
+.mycontainer {
+  border: 2px solid black;
+  position: right;
+  margin: 0px;
+  width: auto;
+}
+
+/* The navbar */
+.topnavigation {
+  overflow: hidden;
+  background-color: #B2BABB;
+}
+
+/* Navbar links */
+.topnavigation a {
+    letter-spacing: 0em;
+	font: normal 105% arial, sans-serif;
+	text-transform: uppercase;
+	display: block;
+	float:right;
+	height: 20px;
+	text-decoration: none;
+	padding: 9px 22px 5px 16px;
+	text-align: center;
+	color: white;
+	border: 0;
+}
+
+.topnavigation a:hover {
+  background-color: #555;
+  color: black;
+}

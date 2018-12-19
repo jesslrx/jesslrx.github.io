@@ -1,0 +1,128 @@
+<!DOCTYPE HTML>
+
+<html lang="en">
+<head>
+
+<title>Air Pollution and Water Usage</title>
+    <link rel="stylesheet" type="text/css" href="css/styleproject.css" />
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+	<script type="text/javascript">
+		google.charts.load('current', {'packages':['corechart']});
+		google.charts.setOnLoadCallback(drawAllSheets);
+		
+		function drawAllSheets() {
+			
+			drawSheetName('waterwithdrawals',
+			              'SELECT B,C,D,E,F,G,H',
+						  waterusageResponseHandler);
+			
+		} //drawAllSheets()
+		
+		function drawSheetName(sheetName, query, responseHandler) {
+			
+			var queryString = encodeURIComponent(query);
+			var query = new google.visualization.Query(
+				'https://docs.google.com/spreadsheets/d/1W-uKl5wYfIp_Qa9PSZBAuYi_tHy_qnUaU8d7s6Rw_T0/gviz/tq?sheet=' 
+				+ sheetName + '&headers=1&tq=' + queryString);
+			query.send(responseHandler);
+		} //drawSheetName
+		
+
+		
+		function waterusageResponseHandler(response) {
+		
+			
+			var data = response.getDataTable();
+			data.sort({column: 5, desc:true});
+			
+			var options = {
+				height: 400,
+				vAxis: {title: 'million m3'},
+				hAxis: {title: 'Country'}
+			};
+			
+			var chart = new google.visualization.ColumnChart(
+						document.getElementById('waterusage_div'));
+			chart.draw(data, options);
+		} //waterusageResponseHandler
+		
+	</script>
+</head>
+
+<body>
+
+<div id="main">
+   <div id="header">
+      <div id="title">
+	     <div id="logo_title">
+			
+		 </div><!-- logo_title -->
+	  </div><!-- title -->
+	  <div class="mycontainer">
+       <div class="topnavigation">
+      <a href="link10_UsagevsGov.html">Vs.Government Spending</a>
+      <a href="link5_WaterUsagevsGDPpercapita.html">Vs.GDP</a>
+      <a href="link7_WaterTreatmentRate.html">Treatment Rate</a>
+      <a href="link6_WaterUsageGrowthRate.html">Growth Rate</a>
+	  <a href="link4_WaterUsage.html">Usage</a>
+      </div><!-- mycontainer -->
+       </div><!-- topnavigation -->
+   </div><!-- header -->
+   <div id="main_content">
+     
+	
+	<div id="sidenavigation" class="sidenav">
+       <a href="projectfinal.html" id="Home">Home</a>
+       <a href="Air.html" id="Air">Air</a>
+       <a href="Water.html" id="Water">Water</a>
+       <a href="https://data.oecd.org/" id="Data">Data</a>
+    </div><!-- sidenavigation -->
+	
+	<div id="introduction">
+		<h2>Water Treatment and Usage</h2>
+		<p>Water Treatment and Usage part mainly covers the following sections:
+		<ul style="list-style-type:none">
+          <li>Summary of six-year Water Usage</li>
+          <li>Water Usage from 2006 to 2011</li>
+          <li>Average annual growth rate of Water Usage</li>
+		  <li>Average waste water treatment</li>
+		  <li>Comparison of Water Usage per Capita to GDP per Capita</li>
+		  <li>Comparison of Water Usage per Capita to Environmental Protection per Capita</li>
+        </ul>
+		</p>
+		<p><img style="padding: 0 5px; float: right;" src="css/pic5.jpg" /></p>
+	    <p style="margin-top: -40px;"> </p>
+		<p>The graph below demonstrates the summary of six-year water usage. It shows that United 
+		   State has the highest water usage, while Japan has the second highest usage. Mexico has 
+		   almost the same amount of water usage as that in Japan. Turkey shows an increasing pattern 
+		   while Canada shows a decreasing pattern.   
+		</p>
+		
+	 </div><!-- introduction -->
+	
+	    <h2>Summary of Water Usage From 2006 to 2011</h2>
+	    <div id="waterusage_div"style="width: 900px; height: 500px;"></div><!-- call waterusage_div -->
+		<ul style="list-style-type:none">
+          <li>USA: data at the county level are compiled into a national water-use data system every five 
+		      years. Year 2006 - 2008 are set the same as Year 2005. Year 2009 - 2011 are set the same as Year 2010.</li>
+          <li>Canada: Data are collected every two years. Year 2006 is set the same as Year 2007. Year 2008 
+		      is set the same as Year 2009. Year 2010 is set the same as Year 2011.</li>
+          <li>Germany: Data are collected every three years. Year 2006 and Year 2008 are set the same as Year 2007. 
+		      Year 2009 and Year 2011 are set the same as Year 2010.</li>
+        </ul><!-- insert bullet points -->
+   </div><!-- main_content -->
+   
+   
+   <div id="footer">
+       &copy; <script>var d = new Date(); document.write(d.getFullYear());</script>
+	   | Developed by RUIXI LIU
+   </div><!-- footer -->
+   
+ </div><!-- main -->
+
+</body>
+
+
+
+</html>
+

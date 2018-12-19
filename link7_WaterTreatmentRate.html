@@ -1,0 +1,179 @@
+<!DOCTYPE HTML>
+
+<html lang="en">
+<head>
+
+<title>Air Pollution and Water Usage</title>
+    <link rel="stylesheet" type="text/css" href="css/styleproject.css" />
+    <style>
+        .bar {
+            fill: lightblue;
+        }
+
+        .highlight {
+            fill: orange;
+        }
+   </style>
+
+	<script type="text/javascript" src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="js/d3-tip.js"></script>
+	<link rel="stylesheet" href="css/d3-tip.css">
+	
+	
+    <meta charset="UTF-8">	
+
+</head>
+
+<body>
+
+<div id="main">
+   <div id="header">
+      <div id="title">
+	     <div id="logo_title">
+			
+		 </div><!-- logo_title -->
+	  </div><!-- title -->
+	  <div class="mycontainer">
+       <div class="topnavigation">
+      <a href="link10_UsagevsGov.html">Vs.Government Spending</a>
+      <a href="link5_WaterUsagevsGDPpercapita.html">Vs.GDP</a>
+      <a href="link7_WaterTreatmentRate.html">Treatment Rate</a>
+      <a href="link6_WaterUsageGrowthRate.html">Growth Rate</a>
+	  <a href="link4_WaterUsage.html">Usage</a>
+      </div><!-- container -->
+       </div><!-- topnav -->
+   </div><!-- header -->
+   <div id="main_content">
+     
+	
+	<div id="sidenavigation" class="sidenav">
+       <a href="projectfinal.html" id="Home">Home</a>
+       <a href="Air.html" id="Air">Air</a>
+       <a href="Water.html" id="Water">Water</a>
+       <a href="https://data.oecd.org/" id="Data">Data</a>
+    </div><!-- sidenavigation -->
+	
+	<div id="introduction">
+		<h2>Water Treatment and Usage</h2>
+        <p>The graph below demonstrates average waste water treatment rate from top 10 countries. 
+		   It shows that Germany has the highest treatment rate (about 96 percent) compared with other countries, 
+		   while Spain (about 93 percent) has the second highest treatment rate. Mexico has the lowest treatment rate 
+		   (below 50 percent). Although United States and Japan have the highest water usage, the waste water treatment 
+		   rates of these two countries are below the average of these ten countries.
+		</p>
+		
+	 </div><!-- introduction -->
+	
+	<svg width="800" height="400"></svg>
+    <script>
+    	var padding = {top:60,bottom:60,left:60,right:60}
+    	var svg = d3.select("svg");//create the SVG
+    	var width = svg.attr("width");//define the width of SVG
+    	var height = svg.attr("height");//define the height of SVG
+    	var g = svg.append("g")
+    		.attr("transform","translate("+padding.top+","+padding.left+")"); //add a group element to the SVG and "transform" function to position the graph with margin
+        
+		g.append("text")
+       .attr("transform", "translate(0,0)")
+       .attr("x", 0)
+       .attr("y", -10)
+       .attr("font-size", "18px")
+	   .attr("stroke", "black")
+       .text("Average Waste Water Treatment Rate(%)") 
+	   
+        d3.csv("data/Treatment Rate.csv").then(function(data){
+	    //console.log(data); //to test if data have been read properly   	
+			
+    	var xScale = d3.scaleBand() //define xScale for the bar chart
+    		.domain(data.map(function(d) { return d.country; }))
+    		.rangeRound([0,width-padding.left-padding.right]);
+    	var xAxis = d3.axisBottom(xScale); //define x axis
+    		
+    	var yScale = d3.scaleLinear() //define yScale for the bar chart
+    		.domain([-5, d3.max(data, function(d) { return d.treatment; })])
+    		.range([height-padding.top-padding.bottom,0]);
+    	var yAxis = d3.axisLeft(yScale); //define y axis
+    	
+		//add another group element
+    	g.append("g")
+    		.attr("transform","translate("+0+","+(height-padding.top-padding.bottom)+")")
+    		.call(xAxis); //insert x axis
+
+        //add one more group element		
+    	g.append("g")
+    		.attr("transform","translate(0,0)")
+    		.call(yAxis.tickFormat(function(d){
+             return d + "%" ;
+              }))
+			.append("text")
+            .attr("transform", "rotate(-90)")
+            .attr("y", 10)
+            .attr("dy", "-5em")
+            .attr("text-anchor", "end")
+            .attr("stroke", "black")
+            .text("Treatment Rate"); //append text element to y axis
+		
+		var tip = d3.tip().attr("class", "d3-tip")
+		.html(function(d){
+			var text = "<strong>Country: </strong><span style='color:white'>" + d.country + "</span><br>";
+				text += "<strong>Treatment Rate: </strong><span style='color:white'>" + d.treatment + "</span><br>";
+			return text;
+		});
+
+        g.call(tip);
+
+		
+		
+        var rectPadding = 10;//define space between bars
+		
+		
+				
+		//add bars and define x position, y position, width, and height of each bar 
+        g.selectAll(".bar")
+            .data(data)
+            .enter().append("rect")
+            .attr("class", "bar")
+			.on("mouseover", tip.show)
+            .on("mouseout", tip.hide)   
+            .attr("x", function(d) { return xScale(d.country); }) 
+            .attr("y", function(d) { return yScale(d.treatment); })
+            .attr("width",function(){
+    			return xScale.step()-rectPadding;
+				})
+			         .transition()
+            .ease(d3.easeLinear)
+            .duration(600)
+            .delay(function (d, i) {
+              return i * 100;
+                })
+            .attr("height", function(d) { return height - padding.top - padding.bottom - yScale(d.treatment); 
+			    });
+		   
+		   
+              
+});
+
+    </script>
+		<ul style="list-style-type:none">
+          <li>move the mouse cursor to the rectangular bars to see label</li>
+		  <li>As there are too many missing values, the treatment rates are analyzed based on the average value. For example, 
+		      for Canada, only Year 2006 and Year 2009 data are available. The average water treatment rate for Canada is 
+			  the average value of Year 2006 and Year 2009.  </li>
+        </ul> 
+		
+   </div><!-- main_content -->
+   
+   
+   <div id="footer">
+       &copy; <script>var d = new Date(); document.write(d.getFullYear());</script>
+	   | Developed by RUIXI LIU
+   </div><!-- footer -->
+   
+ </div><!-- main -->
+
+</body>
+
+
+
+</html>
+

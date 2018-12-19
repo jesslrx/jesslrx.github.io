@@ -1,0 +1,242 @@
+<!DOCTYPE HTML>
+
+<html lang="en">
+<head>
+
+<title>Air Pollution and Water Usage</title>
+    <link rel="stylesheet" type="text/css" href="css/styleproject.css" />
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+	<script type="text/javascript">
+		google.charts.load('current', {'packages':['corechart']});
+		google.charts.setOnLoadCallback(drawAllSheets);
+		
+		function drawAllSheets() {
+			
+			drawSheetName('waterwithdrawals',
+			              'SELECT B,C',
+						  waterusage2006ResponseHandler);
+			drawSheetName('waterwithdrawals',
+			              'SELECT B,D',
+						  waterusage2007ResponseHandler);
+			drawSheetName('waterwithdrawals',
+			              'SELECT B,E',
+						  waterusage2008ResponseHandler);
+			drawSheetName('waterwithdrawals',
+			              'SELECT B,F',
+						  waterusage2009ResponseHandler);
+			drawSheetName('waterwithdrawals',
+			              'SELECT B,G',
+						  waterusage2010ResponseHandler);
+			drawSheetName('waterwithdrawals',
+			              'SELECT B,H',
+						  waterusage2011ResponseHandler);
+			
+		} //drawAllSheets()
+		
+		function drawSheetName(sheetName, query, responseHandler) {
+			
+			var queryString = encodeURIComponent(query);
+			var query = new google.visualization.Query(
+				'https://docs.google.com/spreadsheets/d/1W-uKl5wYfIp_Qa9PSZBAuYi_tHy_qnUaU8d7s6Rw_T0/gviz/tq?sheet=' 
+				+ sheetName + '&headers=1&tq=' + queryString);
+			query.send(responseHandler);
+		} //drawSheetName
+		
+
+		
+		function waterusage2006ResponseHandler(response) {
+		
+		
+			var data = response.getDataTable();
+			data.sort({column: 1, desc: true });
+			
+			var options = {
+				height: 400,
+				colorAxis: {colors: ['#CECFFC', '#393FF6']}, //blue
+				title: 'Water Usage in 2006 (million m3)'
+			};
+			
+			var chart = new google.visualization.GeoChart(document.getElementById('waterusage2006_div'));
+			chart.draw(data, options);
+		} //waterusage2006ResponseHandler
+		
+		function waterusage2007ResponseHandler(response) {
+		
+		
+			var data = response.getDataTable();
+			data.sort({column: 1, desc: true });
+			
+			var options = {
+				height: 400,
+				colorAxis: {colors: ['#F7C4CB', '#E62441']}, //red
+				title: 'Water Usage in 2007 (million m3)'
+			};
+			
+			var chart = new google.visualization.GeoChart(document.getElementById('waterusage2007_div'));
+			chart.draw(data, options);
+		} //waterusage2007ResponseHandler
+		
+		function waterusage2008ResponseHandler(response) {
+		
+		
+			var data = response.getDataTable();
+			data.sort({column: 1, desc: true });
+			
+			var options = {
+				height: 400,
+				colorAxis: {colors: ['#FBDFC5', '#F28E32']}, //orange
+				title: 'Water Usage in 2008 (million m3)'
+			};
+			
+			var chart = new google.visualization.GeoChart(document.getElementById('waterusage2008_div'));
+			chart.draw(data, options);
+		} //waterusage2008ResponseHandler
+		
+		function waterusage2009ResponseHandler(response) {
+		
+		
+			var data = response.getDataTable();
+			data.sort({column: 1, desc: true });
+			
+			var options = {
+				height: 400,
+				colorAxis: {colors: ['#AEEFAA', '#249D1C']}, //green
+				title: 'Water Usage in 2009 (million m3)'
+			};
+			
+			var chart = new google.visualization.GeoChart(document.getElementById('waterusage2009_div'));
+			chart.draw(data, options);
+		} //waterusage2009ResponseHandler
+		
+		function waterusage2010ResponseHandler(response) {
+		
+		
+			var data = response.getDataTable();
+			data.sort({column: 1, desc: true });
+			
+			var options = {
+				height: 400,
+				colorAxis: {colors: ['#C1AAEA', '#7D4CD3']}, //purple
+				title: 'Water Usage in 2010 (million m3)'
+			};
+			
+			var chart = new google.visualization.GeoChart(document.getElementById('waterusage2010_div'));
+			chart.draw(data, options);
+		} //waterusage2010ResponseHandler
+		
+		function waterusage2011ResponseHandler(response) {
+		
+		
+			var data = response.getDataTable();
+			data.sort({column: 1, desc: true });
+			
+			var options = {
+				height: 400,
+				colorAxis: {colors: ['#78BEF7', '#0A63AB']}, //dark blue
+				title: 'Water Usage in 2011 (million m3)'
+			};
+			
+			var chart = new google.visualization.GeoChart(document.getElementById('waterusage2011_div'));
+			chart.draw(data, options);
+		} //waterusage2011ResponseHandler
+		
+	</script>
+</head>
+
+<body>
+
+<div id="main">
+   <div id="header">
+      <div id="title">
+	     <div id="logo_title">
+			
+		 </div><!-- logo_title -->
+	  </div><!-- title -->
+	  <div class="mycontainer">
+       <div class="topnavigation">
+      <a href="link10_UsagevsGov.html">Vs.Government Spending</a>
+      <a href="link5_WaterUsagevsGDPpercapita.html">Vs.GDP</a>
+      <a href="link7_WaterTreatmentRate.html">Treatment Rate</a>
+      <a href="link6_WaterUsageGrowthRate.html">Growth Rate</a>
+	  <a href="link4_WaterUsage.html">Usage</a>
+      </div><!-- container -->
+       </div><!-- topnav -->
+   </div><!-- header -->
+   <div id="main_content">
+     
+	
+	<div id="sidenavigation" class="sidenav">
+       <a href="projectfinal.html" id="Home">Home</a>
+       <a href="Air.html" id="Air">Air</a>
+       <a href="Water.html" id="Water">Water</a>
+       <a href="https://data.oecd.org/" id="Data">Data</a>
+    </div><!-- sidenavigation -->
+	
+	 
+	<h2>Water Treatment and Usage</h2>
+	<h3>Water Usage in 2006 (million m3)</h3>
+	<p>The graph below demonstrates water usage from top 10 countries in 2006. 
+	   The color represents the significance of data value (e.g., the deeper color means a higher number).
+       It shows that United State has the highest water usage, while Japan has the second highest usage. 
+	   Mexico has almost the same amount of water usage as that in Japan. The other five years demonstrate similar patterns.
+	</P>
+	<div id="waterusage2006_div"
+		 style="width: 700px;"></div>
+	<br />
+	
+	<h3>Water Usage in 2007 (million m3)</h3>
+	<p>The graph below demonstrates water usage from top 10 countries in 2007. 
+	   The color represents the significance of data value (e.g., the deeper color means a higher number).   
+	</p>
+	<div id="waterusage2007_div"
+		 style="width: 700px;"></div>
+	<br />
+	
+	<h3>Water Usage in 2008 (million m3)</h3>
+	<p>The graph below demonstrates water usage from top 10 countries in 2008. 
+	   The color represents the significance of data value (e.g., the deeper color means a higher number).   
+	</p>
+	<div id="waterusage2008_div"
+		 style="width: 700px;"></div>
+	<br />
+	
+	<h3>Water Usage in 2009 (million m3)</h3>
+	<p>The graph below demonstrates water usage from top 10 countries in 2009. 
+       The color represents the significance of data value (e.g., the deeper color means a higher number).   
+	</p>
+	<div id="waterusage2009_div"
+		 style="width: 700px;"></div>
+	<br />
+	
+	<h3>Water Usage in 2010 (million m3)</h3>
+	<p>The graph below demonstrates water usage from top 10 countries in 2010. 
+	   The color represents the significance of data value (e.g., the deeper color means a higher number).   
+	</p>
+	<div id="waterusage2010_div"
+		 style="width: 700px;"></div>
+	<br />
+	
+	<h3>Water Usage in 2011 (million m3)</h3>
+	<p>The graph below demonstrates water usage from top 10 countries in 2011. 
+	   The color represents the significance of data value (e.g., the deeper color means a higher number).   
+	</p>
+	<div id="waterusage2011_div"
+		 style="width: 700px;"></div>
+	<br />
+		 
+   </div><!-- main_content -->
+   
+   
+   <div id="footer">
+       &copy; <script>var d = new Date(); document.write(d.getFullYear());</script>
+	   | Developed by RUIXI LIU
+   </div><!-- footer -->
+   
+ </div><!-- main -->
+
+</body>
+
+
+
+</html>
+

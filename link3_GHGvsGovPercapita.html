@@ -1,0 +1,293 @@
+<!DOCTYPE HTML>
+
+<html lang="en">
+<head>
+
+<title>Air Pollution and Water Usage</title>
+    <link rel="stylesheet" type="text/css" href="css/styleproject.css" />
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['bar']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Country', 'GHG', 'GovernmentSpending'],
+          ['United States', 24.349, 0],
+		  ['Japan', 10.534, 397.82166976025],
+          ['Germany', 12.268, 188.57342076069],
+          ['Canada', 22.141, 0],
+          ['Mexico', 5.46, 0],
+		  ['United Kingdom', 11.341, 299.313883028575],
+		  ['South Korea', 11.539, 223.018822669336],
+		  ['Australia', 25.614, 274.269987059762],
+		  ['Italy', 9.649, 236.058322338883],
+		  ['France', 8.858, 300.105617617521]
+        ]);
+		  data.sort({column: 1, desc: true});
+
+        var options = {
+          chart: {
+            title: 'Per Capita GHG Emissions vs. Per Capita Government Spending in 2006',
+            subtitle: 'GHG Emissions (in Tonnes) vs. Government Spending (in dollars ($)) per capita',
+          },
+          bars: 'horizontal' 
+        };
+
+        var chart = new google.charts.Bar(document.getElementById('percapitaGHGvsGovspending2006_div'));
+
+        chart.draw(data, google.charts.Bar.convertOptions(options));
+  
+	  
+	  
+        var data1 = google.visualization.arrayToDataTable([
+          ['Country', 'GHG', 'GovernmentSpending'],
+          ['United States', 24.456, 0],
+		  ['Japan', 10.823, 393.770511803787],
+          ['Germany', 11.967, 184.286112221589],
+          ['Canada', 22.554, 0],
+          ['Mexico', 5.669, 0],
+		  ['United Kingdom', 11.035, 326.301475808701],
+		  ['South Korea', 11.8, 248.761715394619],
+		  ['Australia', 25.52, 280.346175809178],
+		  ['Italy', 9.47, 262.675641049049],
+		  ['France', 8.657, 306.063811832558]
+        ]);
+		  data1.sort({column: 1, desc: true});
+
+        var options1 = {
+          chart: {
+            title: 'Per Capita GHG Emissions vs. Per Capita Government Spending in 2007',
+            subtitle: 'GHG Emissions (in Tonnes) vs. Government Spending (in dollars ($)) per capita',
+          },
+          bars: 'horizontal' 
+        };
+
+        var chart1 = new google.charts.Bar(document.getElementById('percapitaGHGvsGovspending2007_div'));
+
+        chart1.draw(data1, google.charts.Bar.convertOptions(options1));
+		
+		var data2 = google.visualization.arrayToDataTable([
+          ['Country', 'GHG', 'GovernmentSpending'],
+          ['United States', 23.552, 0],
+		  ['Japan', 10.257, 395.964534189996],
+          ['Germany', 12.021, 194.379571455724],
+          ['Canada', 21.677, 284.902255639098],
+          ['Mexico', 5.977, 0],
+		  ['United Kingdom', 10.583, 316.750357419395],
+		  ['South Korea', 12.03, 278.282278310674],
+		  ['Australia', 25.201, 291.388640641854],
+		  ['Italy', 9.212, 287.505209927766],
+		  ['France', 8.504, 323.910905043875]
+        ]);
+		  data2.sort({column: 1, desc: true});
+
+        var options2 = {
+          chart: {
+            title: 'Per Capita GHG Emissions vs. Per Capita Government Spending in 2008',
+            subtitle: 'GHG Emissions (in Tonnes) vs. Government Spending (in dollars ($)) per capita',
+          },
+          bars: 'horizontal' 
+        };
+
+        var chart2 = new google.charts.Bar(document.getElementById('percapitaGHGvsGovspending2008_div'));
+
+        chart2.draw(data2, google.charts.Bar.convertOptions(options2));
+		
+		var data3 = google.visualization.arrayToDataTable([
+          ['Country', 'GHG', 'GovernmentSpending'],
+          ['United States', 21.884, 0],
+		  ['Japan', 9.692, 466.149705539581],
+          ['Germany', 11.217, 266.877791259179],
+          ['Canada', 20.171, 311.864406779661],
+          ['Mexico', 5.7, 0],
+		  ['United Kingdom', 9.583, 346.904991667189],
+		  ['South Korea', 12.081, 302.028137728746],
+		  ['Australia', 24.933, 354.855411155849],
+		  ['Italy', 8.303, 304.023362102704],
+		  ['France', 8.088, 355.463752603855]
+        ]);
+		  data3.sort({column: 1, desc: true});
+
+        var options3 = {
+          chart: {
+            title: 'Per Capita GHG Emissions vs. Per Capita Government Spending in 2009',
+            subtitle: 'GHG Emissions (in Tonnes) vs. Government Spending (in dollars ($)) per capita',
+          },
+          bars: 'horizontal' 
+        };
+
+        var chart3 = new google.charts.Bar(document.getElementById('percapitaGHGvsGovspending2009_div'));
+
+        chart3.draw(data3, google.charts.Bar.convertOptions(options3));
+		
+		var data4 = google.visualization.arrayToDataTable([
+          ['Country', 'GHG', 'GovernmentSpending'],
+          ['United States', 22.43, 0],
+		  ['Japan', 10.115, 411.242474349072],
+          ['Germany', 11.654, 235.51140615639],
+          ['Canada', 20.31, 338.459276683328],
+          ['Mexico', 5.596, 0],
+		  ['United Kingdom', 9.723, 354.417824638835],
+		  ['South Korea', 13.243, 240.091945734651],
+		  ['Australia', 24.375, 393.6263830786],
+		  ['Italy', 8.438, 300.579831542602],
+		  ['France', 8.2, 369.168297710699]
+        ]);
+		  data4.sort({column: 1, desc: true});
+
+        var options4 = {
+          chart: {
+            title: 'Per Capita GHG Emissions vs. Per Capita Government Spending in 2010',
+            subtitle: 'GHG Emissions (in Tonnes) vs. Government Spending (in dollars ($)) per capita',
+          },
+          bars: 'horizontal' 
+        };
+
+        var chart4 = new google.charts.Bar(document.getElementById('percapitaGHGvsGovspending2010_div'));
+
+        chart4.draw(data4, google.charts.Bar.convertOptions(options4));
+		
+		var data5 = google.visualization.arrayToDataTable([
+          ['Country', 'GHG', 'GovernmentSpending'],
+          ['United States', 21.768, 0],
+		  ['Japan', 10.513, 434.376727706102],
+          ['Germany', 11.371, 249.559489692088],
+          ['Canada', 20.253, 334.507862550961],
+          ['Mexico', 5.615, 0],
+		  ['United Kingdom', 8.901, 329.926841594284],
+		  ['South Korea', 13.706, 242.536583983856],
+		  ['Australia', 24.041, 434.400135365665],
+		  ['Italy', 8.223, 319.355544443981],
+		  ['France', 7.732, 383.61815481184]
+        ]);
+		  data5.sort({column: 1, desc: true});
+
+        var options5 = {
+          chart: {
+            title: 'Per Capita GHG Emissions vs. Per Capita Government Spending in 2011',
+            subtitle: 'GHG Emissions (in Tonnes) vs. Government Spending (in dollars ($)) per capita',
+          },
+          bars: 'horizontal' 
+        };
+
+        var chart5 = new google.charts.Bar(document.getElementById('percapitaGHGvsGovspending2011_div'));
+
+        chart5.draw(data5, google.charts.Bar.convertOptions(options5));
+		
+		
+      }
+	  
+    </script>
+</head>
+
+<body>
+
+<div id="main">
+   <div id="header">
+      <div id="title">
+	     <div id="logo_title">
+			
+		 </div><!-- logo_title -->
+	  </div><!-- title -->
+	  <div class="mycontainer">
+       <div class="topnavigation">
+      <a href="link3_GHGvsGovPercapita.html">Vs.Government Spending</a>
+      <a href="link9_GHGvsGDP.html">Vs.GDP</a>
+      <a href="link8_GHGvsPopulation.html">Vs.Population</a>
+      <a href="link2_GHGgrowthrate.html">Growth Rate</a>
+	  <a href="link1_GHGemission.html">Emissions</a>
+      </div><!-- container -->
+       </div><!-- topnav -->
+   </div><!-- header -->
+   <div id="main_content">
+     
+	
+	<div id="sidenavigation" class="sidenav">
+       <a href="projectfinal.html" id="Home">Home</a>
+       <a href="Air.html" id="Air">Air</a>
+       <a href="Water.html" id="Water">Water</a>
+       <a href="https://data.oecd.org/" id="Data">Data</a>
+    </div><!-- sidenavigation -->
+	
+		<h2>Air Pollution</h2>
+		<p>The visualization for comparison of GHG emissions per capita to government spending on environmental 
+		   protection per capita is created by using BarChart. The following graph demonstrates the comparison of 
+		   GHG emissions per capita to government spending on environmental protection per capita in 2006. The horizontal 
+		   blue rectangular bars represent GHG emissions per capita and the horizontal red rectangular bars represent 
+		   government spending on environmental protection per capita. The key point of this graph is that Japan has the 
+		   highest environmental spending while relatively smaller emissions per capita. Other five years show similar pattern.   
+		</p>
+	    <div id="percapitaGHGvsGovspending2006_div" 
+	     style="width: 800px; height: 400px;"></div><!-- call percapitaGHGvsGovspending2006_div -->
+	    <br /><br /><br /><br /><br /><br /><br />
+	    
+		<p>The following graph demonstrates the comparison of GHG emissions per capita to government spending on 
+		   environmental protection per capita in 2007. The horizontal blue rectangular bars represent GHG emissions 
+		   per capita and the horizontal red rectangular bars represent government spending on environmental protection 
+		   per capita.   
+		</p>
+	    <div id="percapitaGHGvsGovspending2007_div" 
+	     style="width: 800px; height: 400px;"></div><!-- call percapitaGHGvsGovspending2007_div -->
+	    <br /><br /><br /><br /><br /><br /><br />
+	    
+		<p>The following graph demonstrates the comparison of GHG emissions per capita to government spending on 
+		   environmental protection per capita in 2008. The horizontal blue rectangular bars represent GHG emissions 
+		   per capita and the horizontal red rectangular bars represent government spending on environmental protection 
+		   per capita.   
+		</p>
+	    <div id="percapitaGHGvsGovspending2008_div" 
+	     style="width: 800px; height: 400px;"></div><!-- call percapitaGHGvsGovspending2008_div -->
+	    <br /><br /><br /><br /><br /><br /><br />
+	    
+		<p>The following graph demonstrates the comparison of GHG emissions per capita to government spending on 
+		   environmental protection per capita in 2009. The horizontal blue rectangular bars represent GHG emissions 
+		   per capita and the horizontal red rectangular bars represent government spending on environmental protection 
+		   per capita.   
+		</p>
+	    <div id="percapitaGHGvsGovspending2009_div" 
+	     style="width: 800px; height: 400px;"></div><!-- call percapitaGHGvsGovspending2009_div -->
+	    <br /><br /><br /><br /><br /><br /><br />
+	    
+		<p>The following graph demonstrates the comparison of GHG emissions per capita to government spending on 
+		   environmental protection per capita in 2010. The horizontal blue rectangular bars represent GHG emissions 
+		   per capita and the horizontal red rectangular bars represent government spending on environmental protection 
+		   per capita.   
+		</p>
+	    <div id="percapitaGHGvsGovspending2010_div" 
+	    style="width: 800px; height: 400px;"></div><!-- call percapitaGHGvsGovspending2010_div -->
+	    <br /><br /><br /><br /><br /><br /><br />
+	    
+		<p>The following graph demonstrates the comparison of GHG emissions per capita to government spending on 
+		   environmental protection per capita in 2011. The horizontal blue rectangular bars represent GHG emissions 
+		   per capita and the horizontal red rectangular bars represent government spending on environmental protection 
+		   per capita.   
+		</p>
+	    <div id="percapitaGHGvsGovspending2011_div" 
+	    style="width: 800px; height: 400px;"></div><!-- call percapitaGHGvsGovspending2011_div -->
+	    <br />
+	    
+		<ul style="list-style-type:none">
+          <li>Canada: data are not available in Year 2006 and 2007.</li>
+          <li>Mexico: data are not available.</li>
+        </ul>
+	 
+   </div><!-- main_content -->
+   
+
+   
+   <div id="footer">
+       &copy; <script>var d = new Date(); document.write(d.getFullYear());</script>
+	   | Developed by RUIXI LIU
+   </div><!-- footer -->
+   
+ </div><!-- main -->
+    
+
+ 
+</body>
+
+
+
+</html>
+

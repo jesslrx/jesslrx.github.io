@@ -1,0 +1,244 @@
+<!DOCTYPE HTML>
+
+<html lang="en">
+<head>
+
+<title>Air Pollution and Water Usage</title>
+    <link rel="stylesheet" type="text/css" href="css/styleproject.css" />
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+	<script type="text/javascript">
+		google.charts.load('current', {'packages':['corechart']});
+		google.charts.setOnLoadCallback(drawAllSheets);
+		
+		function drawAllSheets() {
+			
+			drawSheetName('GHGemissions',
+			              'SELECT B,C',
+						  GHGEmissions2006ResponseHandler);
+			drawSheetName('GHGemissions',
+			              'SELECT B,D',
+						  GHGEmissions2007ResponseHandler);
+			drawSheetName('GHGemissions',
+			              'SELECT B,E',
+						  GHGEmissions2008ResponseHandler);
+			drawSheetName('GHGemissions',
+			              'SELECT B,F',
+						  GHGEmissions2009ResponseHandler);
+			drawSheetName('GHGemissions',
+			              'SELECT B,G',
+						  GHGEmissions2010ResponseHandler);
+			drawSheetName('GHGemissions',
+			              'SELECT B,H',
+						  GHGEmissions2011ResponseHandler);
+			
+		} //drawAllSheets()
+		
+		function drawSheetName(sheetName, query, responseHandler) {
+			
+			var queryString = encodeURIComponent(query);
+			var query = new google.visualization.Query(
+				'https://docs.google.com/spreadsheets/d/1W-uKl5wYfIp_Qa9PSZBAuYi_tHy_qnUaU8d7s6Rw_T0/gviz/tq?sheet=' 
+				+ sheetName + '&headers=1&tq=' + queryString);
+			query.send(responseHandler);
+		} //drawSheetName
+		
+
+		
+		 function GHGEmissions2006ResponseHandler(response) {
+		
+		
+			var data = response.getDataTable();
+			data.sort({column: 1, desc: true });
+			
+			var options = {
+				height: 400,
+				colorAxis: {colors: ['#CECFFC', '#393FF6']}, //blue
+				title: 'GHG emissions in 2006 (million tonnes)'
+			};
+			
+			var chart = new google.visualization.GeoChart(document.getElementById('GHGemissions2006_div'));
+			chart.draw(data, options);
+		} //GHGEmissions2006ResponseHandler
+		
+		function GHGEmissions2007ResponseHandler(response) {
+		
+		
+			var data = response.getDataTable();
+			data.sort({column: 1, desc: true });
+			
+			var options = {
+				height: 400,
+				colorAxis: {colors: ['#F7C4CB', '#E62441']}, //red
+				title: 'GHG emissions in 2007 (million tonnes)'
+			};
+			
+			var chart = new google.visualization.GeoChart(document.getElementById('GHGemissions2007_div'));
+			chart.draw(data, options);
+		} //GHGEmissions2007ResponseHandler
+		
+		function GHGEmissions2008ResponseHandler(response) {
+		
+		
+			var data = response.getDataTable();
+			data.sort({column: 1, desc: true });
+			
+			var options = {
+				height: 400,
+				colorAxis: {colors: ['#FBDFC5', '#F28E32']}, //orange
+				title: 'GHG emissions in 2008 (million tonnes)'
+			};
+			
+			var chart = new google.visualization.GeoChart(document.getElementById('GHGemissions2008_div'));
+			chart.draw(data, options);
+		} //GHGEmissions2008ResponseHandler
+		
+		function GHGEmissions2009ResponseHandler(response) {
+		
+		
+			var data = response.getDataTable();
+			data.sort({column: 1, desc: true });
+			
+			var options = {
+				height: 400,
+				colorAxis: {colors: ['#AEEFAA', '#249D1C']}, //green
+				title: 'GHG emissions in 2009 (million tonnes)'
+			};
+			
+			var chart = new google.visualization.GeoChart(document.getElementById('GHGemissions2009_div'));
+			chart.draw(data, options);
+		} //GHGEmissions2009ResponseHandler
+		
+		function GHGEmissions2010ResponseHandler(response) {
+		
+		
+			var data = response.getDataTable();
+			data.sort({column: 1, desc: true });
+			
+			var options = {
+				height: 400,
+				colorAxis: {colors: ['#C1AAEA', '#7D4CD3']}, //purple
+				title: 'GHG emissions in 2010 (million tonnes)'
+			};
+			
+			var chart = new google.visualization.GeoChart(document.getElementById('GHGemissions2010_div'));
+			chart.draw(data, options);
+		} //GHGEmissions2010ResponseHandler
+		
+		function GHGEmissions2011ResponseHandler(response) {
+		
+		
+			var data = response.getDataTable();
+			data.sort({column: 1, desc: true });
+			
+			var options = {
+				height: 400,
+				colorAxis: {colors: ['#78BEF7', '#0A63AB']}, //dark blue
+				title: 'GHG emissions in 2011 (million tonnes)'
+			};
+			
+			var chart = new google.visualization.GeoChart(document.getElementById('GHGemissions2011_div'));
+			chart.draw(data, options);
+		} //GHGEmissions2011ResponseHandler
+			
+	</script>
+</head>
+
+<body>
+
+<div id="main">
+   <div id="header">
+      <div id="title">
+	     <div id="logo_title">
+			
+		 </div><!-- logo_title -->
+	  </div><!-- title -->
+	  <div class="mycontainer">
+       <div class="topnavigation">
+      <a href="link3_GHGvsGovPercapita.html">Vs.Government Spending</a>
+      <a href="link9_GHGvsGDP.html">Vs.GDP</a>
+      <a href="link8_GHGvsPopulation.html">Vs.Population</a>
+      <a href="link2_GHGgrowthrate.html">Growth Rate</a>
+	  <a href="link1_GHGemission.html">Emissions</a>
+      </div><!-- container -->
+       </div><!-- topnav -->
+   </div><!-- header -->
+   <div id="main_content">
+     
+	
+	<div id="sidenavigation" class="sidenav">
+       <a href="projectfinal.html" id="Home">Home</a>
+       <a href="Air.html" id="Air">Air</a>
+       <a href="Water.html" id="Water">Water</a>
+       <a href="https://data.oecd.org/" id="Data">Data</a>
+    </div><!-- sidenavigation -->
+	
+		<h2>Air Pollution</h2>
+	    <h3>GHG Emissions in 2006 (million tonnes)</h3>
+		<p>The graph below demonstrates emissions of GHG from top 10 countries in 2006. 
+		   The color represents the significance of data value (e.g., the deeper color means a higher number).
+           It shows that United State has the highest GHG emissions, while Japan has the second highest emissions. 
+		   The other five years demonstrate similar patterns.		   
+		</p>
+	    <div id="GHGemissions2006_div"
+		 style="width: 700px;"></div>
+	    <br /><!-- call GHGemissions2006_div -->
+	
+	    <h3>GHG Emissions in 2007 (million tonnes)</h3>
+		<p>The graph below demonstrates emissions of GHG from top 10 countries in 2007. 
+		   The color represents the significance of data value (e.g., the deeper color means a higher number).   
+		</p>
+	    <div id="GHGemissions2007_div"
+		 style="width: 700px;"></div>
+	    <br /><!-- call GHGemissions2007_div -->
+	
+	    <h3>GHG Emissions in 2008 (million tonnes)</h3>
+		<p>The graph below demonstrates emissions of GHG from top 10 countries in 2008. 
+		   The color represents the significance of data value (e.g., the deeper color means a higher number).   
+		</p>
+	    <div id="GHGemissions2008_div"
+		 style="width: 700px;"></div>
+	    <br /><!-- call GHGemissions2008_div -->
+	
+	    <h3>GHG Emissions in 2009 (million tonnes)</h3>
+		<p>The graph below demonstrates emissions of GHG from top 10 countries in 2009. 
+		   The color represents the significance of data value (e.g., the deeper color means a higher number).   
+		</p>
+	    <div id="GHGemissions2009_div"
+		 style="width: 700px;"></div>
+	    <br /><!-- call GHGemissions2009_div -->
+	
+	    <h3>GHG Emissions in 2010 (million tonnes)</h3>
+		<p>The graph below demonstrates emissions of GHG from top 10 countries in 2010. 
+		   The color represents the significance of data value (e.g., the deeper color means a higher number).   
+		</p>
+	    <div id="GHGemissions2010_div"
+		 style="width: 700px;"></div>
+	    <br /><!-- call GHGemissions2010_div -->
+	
+	    <h3>GHG Emissions in 2011 (million tonnes)</h3>
+		<p>The graph below demonstrates emissions of GHG from top 10 countries in 2011. 
+		   The color represents the significance of data value (e.g., the deeper color means a higher number).   
+		</p>
+	    <div id="GHGemissions2011_div"
+		 style="width: 700px;"></div>
+	    <br /><!-- call GHGemissions2011_div -->
+	 
+   </div><!-- main_content -->
+   
+
+   
+   <div id="footer">
+       &copy; <script>var d = new Date(); document.write(d.getFullYear());</script>
+	   | Developed by RUIXI LIU
+   </div><!-- footer -->
+   
+ </div><!-- main -->
+    
+
+ 
+</body>
+
+
+
+</html>
+

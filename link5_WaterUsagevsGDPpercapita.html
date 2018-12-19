@@ -1,0 +1,279 @@
+<!DOCTYPE HTML>
+
+<html lang="en">
+<head>
+
+<title>Air Pollution and Water Usage</title>
+    <link rel="stylesheet" type="text/css" href="css/styleproject.css" />
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+	<script type="text/javascript">
+		google.charts.load('current', {'packages':['corechart']});
+		google.charts.setOnLoadCallback(drawSeriesChart);
+		
+		function drawSeriesChart() {
+
+      var data = google.visualization.arrayToDataTable([
+          ['Country', 'Water Usage', 'GDP'],
+          ['United States', 1618.64924, 46230.8462],
+		  ['Japan', 650.4422008, 33103.05265],
+          ['Germany', 392.1512635, 34753.95204],
+          ['Canada', 1211.128291, 38009.87218],
+          ['Mexico', 713.2450945, 13646.1394],
+		  ['Turkey', 630.894614, 13497.95142],
+		  ['South Korea', 418.9411425, 25827.9503],
+		  ['Spain', 818.9263787, 30844.47942],
+		  ['France', 528.4648896, 32445.3903],
+		  ['Poland', 325.3697682, 15147.8265]
+      ]);
+
+      var options = {
+        title: 'Per Capita Water Usage vs. Per Capita GDP in 2006',
+        hAxis: {title: 'Water Usage per capita in m3'},
+        vAxis: {title: 'GDP per capita in dollar'},
+        bubble: {textStyle: {
+		          fontSize: 12, 
+				  fontName: 'Serif'
+				  
+		}}
+      };
+
+      var chart = new google.visualization.BubbleChart(document.getElementById('chart_div'));
+      chart.draw(data, options);
+	  
+	  var data1 = google.visualization.arrayToDataTable([
+          ['Country', 'Water Usage', 'GDP'],
+          ['United States', 1603.327937, 47902.06035],
+		  ['Japan', 649.4431444, 34507.89647],
+          ['Germany', 392.6852112, 37017.96634],
+          ['Canada', 1198.201383, 39441.96499],
+          ['Mexico', 719.1131391, 14261.30061],
+		  ['Turkey', 565.551153, 14712.88468],
+		  ['South Korea', 384.0720693, 27822.65326],
+		  ['Spain', 786.3869484, 32584.7866],
+		  ['France', 506.8992458, 34089.50946],
+		  ['Poland', 315.5367825, 16787.07569]
+      ]);
+
+      var options1 = {
+        title: 'Per Capita Water Usage vs. Per Capita GDP in 2007',
+        hAxis: {title: 'Water Usage per capita in m3'},
+        vAxis: {title: 'GDP per capita in dollar'},
+        bubble: {textStyle: {
+		          fontSize: 12, 
+				  fontName: 'Serif'
+				  
+		}}
+      };
+
+      var chart1 = new google.visualization.BubbleChart(document.getElementById('chart1_div'));
+      chart1.draw(data1, options1);
+	  
+	  var data2 = google.visualization.arrayToDataTable([
+          ['Country', 'Water Usage', 'GDP'],
+          ['United States', 1588.233896, 48311.2237],
+		  ['Japan', 645.3027598, 34803.65781],
+          ['Germany', 393.2684899, 38662.60613],
+          ['Canada', 945.8407343, 40277.61824],
+          ['Mexico', 716.558823, 14859.95553],
+		  ['Turkey', 591.2316218, 15901.07695],
+		  ['South Korea', 450.7372004, 28655.81293],
+		  ['Spain', 769.2597096, 33442.62264],
+		  ['France', 468.7523638, 35102.87043],
+		  ['Poland', 298.168748, 18315.13109]
+      ]);
+
+      var options2 = {
+        title: 'Per Capita Water Usage vs. Per Capita GDP in 2008',
+        hAxis: {title: 'Water Usage per capita in m3'},
+        vAxis: {title: 'GDP per capita in dollar'},
+        bubble: {textStyle: {
+		          fontSize: 12, 
+				  fontName: 'Serif'
+				  
+		}}
+      };
+
+      var chart2 = new google.visualization.BubbleChart(document.getElementById('chart2_div'));
+      chart2.draw(data2, options2);
+	  
+	  var data3 = google.visualization.arrayToDataTable([
+          ['Country', 'Water Usage', 'GDP'],
+          ['United States', 1595.740019, 47028.1604],
+		  ['Japan', 638.8047996, 33196.05004],
+          ['Germany', 403.350216, 37688.91949],
+          ['Canada', 934.3636876, 38791.07104],
+          ['Mexico', 714.0908028, 14505.56754],
+		  ['Turkey', 626.4644804, 15330.48081],
+		  ['South Korea', 461.5302659, 28320.22437],
+		  ['Spain', 779.036201, 32381.66744],
+		  ['France', 472.491656, 34687.00956],
+		  ['Poland', 301.8635494, 19077.28001]
+      ]);
+
+      var options3 = {
+        title: 'Per Capita Water Usage vs. Per Capita GDP in 2009',
+        hAxis: {title: 'Water Usage per capita in m3'},
+        vAxis: {title: 'GDP per capita in dollar'},
+        bubble: {textStyle: {
+		          fontSize: 12, 
+				  fontName: 'Serif'
+				  
+		}}
+      };
+
+      var chart3 = new google.visualization.BubbleChart(document.getElementById('chart3_div'));
+      chart3.draw(data3, options3);
+	  
+	  var data4 = google.visualization.arrayToDataTable([
+          ['Country', 'Water Usage', 'GDP'],
+          ['United States', 1582.454011, 48393.6164],
+		  ['Japan', 636.1776396, 35007.70177],
+          ['Germany', 404.2831315, 39955.04588],
+          ['Canada', 976.8201005, 40027.20436],
+          ['Mexico', 702.0526769, 15256.86187],
+		  ['Turkey', 641.9827692, 17281.32703],
+		  ['South Korea', 395.9492714, 30376.94049],
+		  ['Spain', 756.4889155, 31964.44728],
+		  ['France', 450.41069, 35944.16577],
+		  ['Poland', 302.3340343, 20809.45684]
+      ]);
+
+      var options4 = {
+        title: 'Per Capita Water Usage vs. Per Capita GDP in 2010',
+        hAxis: {title: 'Water Usage per capita in m3'},
+        vAxis: {title: 'GDP per capita in dollar'},
+        bubble: {textStyle: {
+		          fontSize: 12, 
+				  fontName: 'Serif'
+				  
+		}}
+      };
+
+      var chart4 = new google.visualization.BubbleChart(document.getElementById('chart4_div'));
+      chart4.draw(data4, options4);
+	  
+	  var data5 = google.visualization.arrayToDataTable([
+          ['Country', 'Water Usage', 'GDP'],
+          ['United States', 1570.399867, 49800.32554],
+		  ['Japan', 633.0018232, 35775.25633],
+          ['Germany', 411.6686325, 42692.50173],
+          ['Canada', 966.6952597, 41565.25893],
+          ['Mexico', 705.2740278, 16522.03951],
+		  ['South Korea', 392.431092, 31228.28432],
+		  ['Spain', 748.7334245, 32072.86473],
+		  ['France', 447.8742494, 37447.94954],
+		  ['Poland', 309.1678347, 22576.17938]
+      ]);
+
+      var options5 = {
+        title: 'Per Capita Water Usage vs. Per Capita GDP in 2011',
+        hAxis: {title: 'Water Usage per capita in m3'},
+        vAxis: {title: 'GDP per capita in dollar'},
+        bubble: {textStyle: {
+		          fontSize: 12, 
+				  fontName: 'Serif'
+				  
+		}}
+      };
+
+      var chart5 = new google.visualization.BubbleChart(document.getElementById('chart5_div'));
+      chart5.draw(data5, options5);
+    }
+		
+		
+	</script>
+</head>
+
+<body>
+
+<div id="main">
+   <div id="header">
+      <div id="title">
+	     <div id="logo_title">
+			
+		 </div><!-- logo_title -->
+	  </div><!-- title -->
+	  <div class="mycontainer">
+       <div class="topnavigation">
+      <a href="link10_UsagevsGov.html">Vs.Government Spending</a>
+      <a href="link5_WaterUsagevsGDPpercapita.html">Vs.GDP</a>
+      <a href="link7_WaterTreatmentRate.html">Treatment Rate</a>
+      <a href="link6_WaterUsageGrowthRate.html">Growth Rate</a>
+	  <a href="link4_WaterUsage.html">Usage</a>
+      </div><!-- container -->
+       </div><!-- topnav -->
+   </div><!-- header -->
+   <div id="main_content">
+     
+	
+	<div id="sidenavigation" class="sidenav">
+       <a href="projectfinal.html" id="Home">Home</a>
+       <a href="Air.html" id="Air">Air</a>
+       <a href="Water.html" id="Water">Water</a>
+       <a href="https://data.oecd.org/" id="Data">Data</a>
+    </div><!-- sidenavigation -->
+	
+	 
+	<h2>Water Treatment and Usage</h2>
+	<h3>Water Usage vs. GDP</h3>
+	<p>The visualization for comparison of water usage per capita to GDP per capita is created by using BubbleChart. 
+	   The following graph demonstrates the comparison of water usage per capita to GDP per capita in 2006. The horizontal 
+	   axis represents water usage per capita and the verticle axis represents GDP per capita. The key point of this graph 
+	   is that there is no positive relationship between GDP and water usage per capita. For example, Germany has relatively 
+	   higher GDP per capita, it does not show higher water usage per capita. Other five years show similar pattern.   
+	</p>
+	<div id="chart_div"
+		 style="width: 900px; height: 500px;"></div><!-- call chart_div -->
+	<br /><br /><br /><br /><br /><br />
+	
+	<p>The following graph demonstrates the comparison of water usage per capita to GDP per capita in 2007. The horizontal 
+	   axis represents water usage per capita and the verticle axis represents GDP per capita.  
+	</p>
+	<div id="chart1_div"
+		 style="width: 900px; height: 500px;"></div><!-- call chart1_div -->
+	<br /><br /><br /><br /><br /><br />
+	
+	<p>The following graph demonstrates the comparison of water usage per capita to GDP per capita in 2008. The horizontal 
+	   axis represents water usage per capita and the verticle axis represents GDP per capita.  
+	</p>
+	<div id="chart2_div"
+		 style="width: 900px; height: 500px;"></div><!-- call chart2_div -->
+	<br /><br /><br /><br /><br /><br />
+	
+	<p>The following graph demonstrates the comparison of water usage per capita to GDP per capita in 2009. The horizontal 
+	   axis represents water usage per capita and the verticle axis represents GDP per capita.  
+	</p>
+	<div id="chart3_div"
+		 style="width: 900px; height: 500px;"></div><!-- call chart3_div -->
+	<br /><br /><br /><br /><br /><br />
+	
+	<p>The following graph demonstrates the comparison of water usage per capita to GDP per capita in 2010. The horizontal 
+	   axis represents water usage per capita and the verticle axis represents GDP per capita.  
+	</p>
+	<div id="chart4_div"
+		 style="width: 900px; height: 500px;"></div><!-- call chart4_div -->
+	<br /><br /><br /><br /><br /><br />
+	
+	<p>The following graph demonstrates the comparison of water usage per capita to GDP per capita in 2011. The horizontal 
+	   axis represents water usage per capita and the verticle axis represents GDP per capita.  
+	</p>
+	<div id="chart5_div"
+		 style="width: 900px; height: 500px;"></div><!-- call chart5_div -->
+	<br /><br /><br /><br /><br /><br />
+		 
+   </div><!-- main_content -->
+   
+   
+   <div id="footer">
+       &copy; <script>var d = new Date(); document.write(d.getFullYear());</script>
+	   | Developed by RUIXI LIU
+   </div><!-- footer -->
+   
+ </div><!-- main -->
+
+</body>
+
+
+
+</html>
+
